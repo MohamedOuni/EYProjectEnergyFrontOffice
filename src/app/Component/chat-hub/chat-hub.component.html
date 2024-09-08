@@ -1,0 +1,44 @@
+  <div class="container chat-container">
+    <div class="chat-header">
+      <h3>Welcome to EY Chat</h3>
+    </div>
+    <div class="chat-content">
+      <div class="room_list">
+        <h4>Rooms</h4>
+        <ng-container *ngFor="let room of rooms">
+          <div class="room_item" (click)="selectRoom(room)">
+            <span>{{room}}</span>
+          </div>
+        </ng-container>
+      </div>
+      <div class="divider"></div>
+      <div class="messaging">
+        <div class="mesgs" *ngIf="selectedRoom">
+          <div #scrollMe class="msg_history">
+            <ng-container *ngFor="let message of messages">
+              <div [ngClass]="{'incoming_msg': message.user != loggedInUserName, 'outgoing_msg': message.user === loggedInUserName}">
+                <div *ngIf="message.user != loggedInUserName" class="received_msg">
+                  <div class="received_withd_msg">
+                    <p>{{message.message}}</p>
+                  </div>
+                  <span class="time_date">{{message.user}} | {{message.messageTime | date: 'medium'}}</span>
+                </div>
+                <div *ngIf="message.user === loggedInUserName" class="sent_msg">
+                  <div class="sent_withd_msg">
+                    <p>{{message.message}}</p>
+                  </div>
+                  <span class="time_date">{{message.user}} | {{message.messageTime | date: 'medium'}}</span>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+          <div class="type_msg">
+            <div class="input_msg_write">
+              <input (keydown.enter)="sendMessage()" [(ngModel)]="inputMessage" type="text" class="write_msg form-control" placeholder="Type a message" />
+              <button pButton type="button" icon="pi pi-plus" (click)="sendMessage()" class="msg_send_btn"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+
+.contact-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    width: 100%;
+    margin-top: 40px;
+    background-size: cover;
+}
+
+.contact-header {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.contact-header h1 {
+    color: #000000;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.contact-info p {
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust transparency here */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.contact-image {
+    flex: 1;
+    text-align: center;
+}
+
+.contact-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #1A2F70;
+    box-shadow: 0 0 5px rgba(26, 47, 112, 0.5);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.form-buttons .btn {
+    background-color: #1A2F70;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.form-buttons .btn:hover {
+    background-color: #16325C;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}

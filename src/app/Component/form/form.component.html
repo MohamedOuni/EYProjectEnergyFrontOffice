@@ -1,0 +1,105 @@
+<section class="container-fluid vh-100 d-flex align-items-center justify-content-center bg-gradient">
+  <div class="card shadow-lg rounded-lg overflow-hidden w-75 h-75">
+    <div class="row no-gutters h-100">
+      <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center bg-dark text-white p-4 h-100">
+        <div class="text-center">
+          <h1 class="mb-4">Bienvenue à notre Enquête</h1>
+          <p class="mb-4 lead">Votre participation nous aide à améliorer nos services et à réduire la consommation d'énergie.</p>
+          <img src="assets/images/4.jpg" class="img-fluid mb-4" alt="Energy Saving">
+        </div>
+      </div>
+      <div class="col-lg-6 bg-light d-flex flex-column justify-content-center align-items-center p-5 h-100">
+        <div class="form-panel w-100 h-100 d-flex flex-column justify-content-center">
+          <ng-container *ngIf="currentForm; else formSelection">
+            <ng-container *ngIf="!hasResponded; else respondedMessage">
+              <button class="btn btn-back mb-4" (click)="currentForm = null">
+                <i class="fas fa-arrow-left"></i> Retour aux formulaires
+              </button>
+              <p class="text-center text-muted mb-4">Réduisez votre consommation d'énergie en répondant à ce questionnaire.</p>
+              <div class="progress mb-4 w-100">
+                <div class="progress-bar" role="progressbar" [style.width.%]="getProgress()" aria-valuenow="getProgress()" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <div class="scrollable-content w-100">
+                <div *ngIf="currentForm.questions && currentForm.questions.length > 0">
+                  <ng-container *ngIf="currentQuestionIndex < currentForm.questions.length || currentSubQuestion">
+                    <div *ngIf="currentSubQuestion as currentQuestion; else mainQuestion">
+                      <h5 class="mb-3 text-center">{{ currentQuestion.text }}</h5>
+                      <div *ngIf="currentQuestion.typeQuestion === typeQuestion.Textual">
+                        <input type="text" #textAnswer placeholder="Répondez ici..." class="form-control mb-3" [value]="getAnswerForCurrentQuestion()?.responseText || ''"/>
+                        <button class="btn btn-primary w-100" (click)="answerQuestion(textAnswer.value)">Ok</button>
+                      </div>
+                      <div *ngIf="currentQuestion.typeQuestion === typeQuestion.MultipleChoice">
+                        <ul class="list-group">
+                          <li 
+                            class="list-group-item list-group-item-action text-center" 
+                            *ngFor="let option of currentQuestion.options" 
+                            (click)="answerQuestion(option.text, option.optionId)"
+                            [class.selected-option]="isOptionSelected(option.optionId)">
+                            {{ option.text }}
+                          </li>
+                        </ul>
+                      </div>
+                      <div *ngIf="currentQuestion.typeQuestion === typeQuestion.File">
+                        <input type="file" (change)="onFileSelected($event)" class="form-control mb-3"/>
+                        <button class="btn btn-primary w-100" (click)="answerQuestion('file_response')">Upload</button>
+                      </div>
+                    </div>
+                    <ng-template #mainQuestion>
+                      <div *ngIf="currentForm.questions[currentQuestionIndex] as currentQuestion">
+                        <h5 class="mb-3 text-center">{{ currentQuestion.text }}</h5>
+                        <div *ngIf="currentQuestion.typeQuestion === typeQuestion.Textual">
+                          <input type="text" #textAnswer placeholder="Répondez ici..." class="form-control mb-3" [value]="getAnswerForCurrentQuestion()?.responseText || ''"/>
+                          <button class="btn btn-primary w-100" (click)="answerQuestion(textAnswer.value)">Ok</button>
+                        </div>
+                        <div *ngIf="currentQuestion.typeQuestion === typeQuestion.MultipleChoice">
+                          <ul class="list-group">
+                            <li 
+                              class="list-group-item list-group-item-action text-center" 
+                              *ngFor="let option of currentQuestion.options" 
+                              (click)="answerQuestion(option.text, option.optionId)"
+                              [class.selected-option]="isOptionSelected(option.optionId)">
+                              {{ option.text }}
+                            </li>
+                          </ul>
+                        </div>
+                        <div *ngIf="currentQuestion.typeQuestion === typeQuestion.File">
+                          <input type="file" (change)="onFileSelected($event)" class="form-control mb-3"/>
+                          <button class="btn btn-primary w-100" (click)="answerQuestion('file_response')">Upload</button>
+                        </div>
+                      </div>
+                    </ng-template>
+                  </ng-container>
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                  <button class="btn btn-secondary mb-2" (click)="previousQuestion()">Précédente</button>
+                </div>
+              </div>
+            </ng-container>
+            <ng-template #respondedMessage>
+              <div class="text-center">
+                <button class="btn btn-back mb-4" (click)="currentForm = null">
+                  <i class="fas fa-arrow-left"></i> Retour aux formulaires
+                </button>
+                <h2 class="text-danger mb-4">Vous avez déjà répondu à ce formulaire</h2>
+                <p class="text-muted mb-4">Si vous avez besoin de nous contacter ou de consulter vos réponses, veuillez nous contacter.</p>
+                <button class="btn btn-secondary mb-2" routerLink="/listresponses">Consulter vos réponses</button>
+                <div class="confetti"></div>
+              </div>
+            </ng-template>
+          </ng-container>
+          <ng-template #formSelection>
+            <h2 class="text-center mb-4 text-dark">Sélectionnez un formulaire</h2>
+            <ul class="list-group">
+              <li 
+                class="list-group-item list-group-item-action text-center" 
+                *ngFor="let form of forms" 
+                (click)="selectForm(form)">
+                {{ form.title }}
+              </li>
+            </ul>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

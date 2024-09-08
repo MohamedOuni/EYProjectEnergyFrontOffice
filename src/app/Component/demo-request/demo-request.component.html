@@ -1,0 +1,37 @@
+<form *ngIf="!showSignupRedirect" [formGroup]="demoForm" (ngSubmit)="submitDemoRequest()">
+    <div>
+      <label>Surface du bâtiment (m²):</label>
+      <input formControlName="buildingSurface" type="number" />
+    </div>
+    <div>
+      <label>Montant payé par année (€):</label>
+      <input formControlName="annualPayment" type="number" />
+    </div>
+    <button *ngIf="!showDemoRequest" type="button" (click)="calculateEvaluation()">Évaluer</button>
+  
+    <div *ngIf="evaluation">
+      <p>L'évaluation de votre bâtiment est: {{ evaluation }}</p>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="showDemoRequest">
+      <div>
+        <label>Nom:</label>
+        <input formControlName="visitorName" type="text" />
+      </div>
+      <div>
+        <label>Email:</label>
+        <input formControlName="email" type="email" />
+      </div>
+      <div>
+        <label>Date de la démo:</label>
+        <input formControlName="selectedDate" type="date" />
+      </div>
+      <button type="submit">Demander une démo</button>
+    </div>
+  </form>
+  
+  <div *ngIf="showSignupRedirect" class="signup-message-container">
+    <p>Merci d'avoir demandé une démo! Pour continuer, nous vous invitons à vous inscrire.</p>
+    <button (click)="redirectToSignup()">S'inscrire</button>
+  </div>

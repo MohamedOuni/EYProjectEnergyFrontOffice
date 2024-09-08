@@ -1,0 +1,66 @@
+<div class="container-fluid">
+  <div *ngIf="clientResponses.length === 0" class="no-responses">
+    <div class="background"></div>
+    <img src="assets/images/Ernst-Young-Logo (2).png" alt="No responses">
+    <h3>Aucune réponse trouvée</h3>
+    <p>
+      Vous n'avez pas encore répondu à un formulaire.
+      <a [routerLink]="['/form']">Cliquez ici</a> pour répondre à un formulaire et voir vos réponses ici.
+    </p>
+  </div>
+  <div *ngIf="clientResponses.length > 0" class="content-container">
+    <div *ngFor="let formGroup of groupedResponses; let i = index" class="form-group-container">
+      <h3 class="form-title" style="color: black;">{{ formGroup.formTitle }}</h3>
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Question</th>
+            <th>Réponse</th>
+            <th>Fichier</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let response of formGroup.responses" [ngClass]="{'highlighted': i % 2 === 0}">
+            <td>{{ response.questionText }}</td>
+            <td (dblclick)="openEditModal(response)">
+              <span>{{ response.responseText }}</span>
+            </td>
+            <td>
+              <a *ngIf="response.fileId" class="file-link" (click)="downloadFile(response.fileId)">{{ getFileName(response) }}</a>
+              <span *ngIf="!response.fileId">{{ getFileName(response) }}</span>
+              <div *ngIf="response.fileId">
+                <input type="file" (change)="onFileSelected($event, response.responseId)" class="form-control-file" [disabled]="selectedResponseId && selectedResponseId !== response.responseId"/>
+                <button class="btn btn-primary" (click)="updateResponseFile()" [disabled]="!selectedFile || selectedResponseId !== response.responseId">Mettre à jour</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <!-- Edit Modal -->
+  <div *ngIf="isModalOpen" class="modal" tabindex="-1" role="dialog" style="display: block;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modifier la réponse</h5>
+        </div>
+        <div class="modal-body">
+          <div *ngIf="currentEditingResponse">
+            <form [formGroup]="editForms[currentEditingResponse.responseId]">
+              <div class="form-group">
+                <label for="responseText">Réponse</label>
+                <input type="text" formControlName="responseText" class="form-control" id="responseText">
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="closeEditModal()">Fermer</button>
+          <button type="button" class="btn btn-primary" (click)="saveResponse()">Enregistrer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

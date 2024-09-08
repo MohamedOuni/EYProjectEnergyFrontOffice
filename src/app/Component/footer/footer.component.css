@@ -1,0 +1,139 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Ensure the body takes the full width */
+  overflow-x: hidden;
+}
+
+.footer {
+  background-color: #fff;
+  color: #000;
+  padding: 20px 40px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%; /* Ensure the body takes the full width */
+
+}
+
+.footer-description {
+  font-size: 12px;
+  line-height: 1.4;
+  color: #666;
+  margin-top: 10px;
+}
+
+.footer .left-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}
+
+.footer .right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer-logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+.footer .nav-links {
+  font-weight: bold;
+  margin-right: 15px;
+  text-decoration: none;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.footer .nav-links li {
+  margin-right: 20px;
+}
+
+.footer .nav-links li:last-child {
+  margin-right: 0;
+}
+
+.footer .nav-links a {
+  color: #000;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.footer .social-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.footer .social-links li {
+  margin-right: 10px;
+}
+
+.footer .social-links li:last-child {
+  margin-right: 0;
+}
+
+.footer .social-links a i {
+  font-size: 20px;
+  color: #000;
+}
+
+.footer .social-links a i:hover {
+  color: #ffb400;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer .left-section,
+  .footer .right-section {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .footer .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer .nav-links li {
+    margin-right: 10px;
+  }
+
+  .footer .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer p {
+    font-size: 16px;
+  }
+
+  .footer .nav-links a {
+    font-size: 10px;
+  }
+
+  .footer .social-links a i {
+    font-size: 18px;
+  }
+}

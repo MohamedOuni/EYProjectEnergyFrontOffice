@@ -1,0 +1,90 @@
+
+
+form {
+    max-width: 793px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 19px;
+    background-color: #f9f9f9;
+}
+
+  
+  div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  input {
+    padding: 5px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button[type="button"] {
+    background-color: #28a745;
+  }
+  
+  p {
+    font-size: 1.1em;
+    margin-top: 10px;
+  }
+  .signup-message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 600px; /* Ajuster la hauteur selon le besoin */
+    text-align: center;
+    background-image: url('https://assets.ey.com/content/dam/ey-sites/ey-com/en_gl/topics/power-and-utilities/ey-london-array-offshore-wind-park-in-north-sea-static-no-zoom.jpg'); /* Chemin vers l'image de fond */
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Couleur du texte pour le rendre visible sur l'image */
+    padding: 20px;
+    margin: -5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .signup-message-container p {
+    font-family: Inter;
+    font-size: 2em;
+    font-weight: bold;
+    color: #000000; /* Assurer que le texte est lisible */
+    margin-bottom: 20px;
+  }
+  
+  .signup-message-container button {
+    background-color: #000; /* Couleur noire avec texte jaune */
+    color: #ffc107; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .signup-message-container button:hover {
+    background-color: #333;
+  }
+  
+  .signup-message-container button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.5);
+  }
+  

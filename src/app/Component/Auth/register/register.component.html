@@ -1,0 +1,49 @@
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="assets/images/draw2.webp" class="img-fluid custom-img" alt="Sample image">
+      </div>
+      <div class="col-md-6">
+        <form name="form" (ngSubmit)="onSubmit()" #userForm="ngForm">
+          <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start mb-4">
+            <p class="lead fw-bold mb-0 me-3">Sign Up</p>
+          </div>
+          <!-- label firstName-->
+          <div class="form-outline mb-3">
+            <input type="text" class="form-control" placeholder="your firstname" id="firstName" name="firstName" [(ngModel)]="user.firstName" required />
+          </div>
+          <!-- label Last name-->
+          <div class="form-outline mb-3">
+            <input type="text" class="form-control" placeholder="your lastname" id="lastName" name="lastName" [(ngModel)]="user.lastName" required />
+          </div>
+          <!-- label UserName -->
+          <div class="form-outline mb-3">
+            <input type="text" class="form-control" placeholder="your username" id="username" name="username" [(ngModel)]="user.username" required />
+          </div>
+          <!-- label password -->
+          <div class="form-outline mb-3">
+            <input class="form-control" placeholder="your password" type="password" id="password" name="password" [(ngModel)]="user.password" required />
+          </div>
+          <!-- label email -->
+          <div class="form-outline mb-3">
+            <input type="email" class="form-control" placeholder="your email" id="email" name="email" [(ngModel)]="user.email" required />
+          </div>
+          <!-- label nameCompany -->
+          <div class="form-outline mb-3">
+            <input type="text" class="form-control" placeholder="name of your Company" id="nameCompany" name="nameCompany" [(ngModel)]="user.nameCompany" required />
+          </div>
+          <!-- label Number phone -->
+          <div class="form-outline mb-3">
+            <input type="tel" class="form-control" placeholder="Your phone number" id="phone" name="phone" [(ngModel)]="user.phone" />
+          </div>
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-ey btn-lg" [disabled]="userForm.invalid" style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Have an account? <a routerLink="/signin" class="link-danger">Login</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <a href="/" class="return-home"><i class="fas fa-arrow-left"></i> Return to Home</a>
+</section>

@@ -1,0 +1,52 @@
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="assets/images/draw2.webp" class="img-fluid custom-img" alt="Sample image">
+      </div>
+      <div class="col-md-6">
+        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+          <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start mb-4">
+            <p class="lead fw-bold mb-0 me-3">Sign in</p>
+          </div>
+          <!-- Username Input -->
+          <div class="form-outline mb-3">
+            <input type="text" class="form-control form-control-lg" placeholder="Enter Username" id="username" name="userName" [(ngModel)]="form.username" required #username="ngModel" [ngClass]="{ 'is-invalid': f.submitted && username.errors }" />
+            <label class="form-label" for="username"></label>
+            <div *ngIf="username.errors && f.submitted" class="invalid-feedback">Nom d'utilisateur est requis!</div>
+          </div>
+          <!-- Password Input -->
+          <div class="form-outline mb-3">
+            <input type="password" class="form-control form-control-lg" placeholder="Enter password" id="password" name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
+            <label class="form-label" for="password"></label>
+            <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+              <div *ngIf="password.errors['required']">Mot de passe est requis!</div>
+              <div *ngIf="password.errors['minlength']">Le mot de passe doit comporter au moins 6 caractères!</div>
+            </div>
+          </div>
+          <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
+            Login failed: {{ errorMessage }}
+          </div>
+          <!-- Remember Me Checkbox -->
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="form-check mb-0">
+              <input class="form-check-input me-2" type="checkbox" id="rememberMe" name="rememberMe" [(ngModel)]="form.rememberMe" />
+              <label class="form-check-label" for="rememberMe">Remember me</label>
+            </div>
+
+       
+            
+            <a routerLink="/forgetpassword" class="text-body">Forgot password?</a>
+          </div>
+          <!-- Submit Button -->
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-ey btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a routerLink="/signup" class="link-danger">Register</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <a href="/" class="return-home"><i class="fas fa-arrow-left"></i> Return to Home</a>
+</section>
+

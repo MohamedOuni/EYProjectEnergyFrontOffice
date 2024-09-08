@@ -1,0 +1,41 @@
+.custom-img {
+  max-width: 100%;
+  height: auto;
+}
+.btn-ey {
+  background-color: black;
+  color: yellow;
+  border: none;
+}
+.btn-ey:hover {
+  background-color: rgb(0, 0, 0);
+  color: yellow(222, 237, 81);
+}
+
+
+.return-home {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+}
+.return-home:hover {
+  color: rgb(0, 0, 0);
+}
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}

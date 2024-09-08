@@ -1,0 +1,167 @@
+body {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.no-responses {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.no-responses .background {
+  background: #f2f2f2;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.no-responses img {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+
+.content-container {
+  margin-top: 30px;
+}
+
+.export-button-container {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #ffcc00; /* EY yellow color */
+  border-color: #ffcc00;
+  color: #343a40;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #e6b800;
+  border-color: #e6b800;
+  transform: scale(1.05);
+}
+
+.table {
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.thead-dark {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6;
+}
+
+.form-group-container {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.form-group-container:hover {
+  transform: scale(1.02);
+}
+
+.form-title {
+  color: #007bff;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.file-link {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.highlighted {
+  background-color: #f1f1f1;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.input-file-container {
+  display: flex;
+  align-items: center;
+}
+
+.input-file-container input[type="file"] {
+  flex: 1;
+}
+
+.input-file-container button {
+  margin-left: 10px;
+}
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #999;
+  border-radius: 6px;
+  outline: 0;
+  box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+}
+
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.modal-title {
+  margin: 0;
+  line-height: 1.42857143;
+}
+
+.modal-body {
+  position: relative;
+  padding: 15px;
+}
+
+.modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}

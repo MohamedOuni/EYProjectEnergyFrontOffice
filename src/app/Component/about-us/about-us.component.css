@@ -1,0 +1,61 @@
+.about-us-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.about-us-container h1 {
+    color: #ffc72c;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-us-container h2 {
+    color: #ffc72c; 
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ey-info, .ey-video, .ey-mission {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.ey-info p, .ey-mission p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.ey-image {
+    width: 40px; /* Adjust this value to make the image smaller */
+    height: auto;
+    margin-right: 15px;
+    float: left;
+}
+
+.ey-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.ey-video {
+    text-align: center;
+}
+
+.ey-mission img {
+    width: 40px; /* Adjust this value to make the image smaller */
+    height: auto;
+    margin-right: 15px;
+    float: left;
+}

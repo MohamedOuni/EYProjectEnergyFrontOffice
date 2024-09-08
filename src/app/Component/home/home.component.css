@@ -1,0 +1,125 @@
+.hero-section {
+  background: url('/assets/images/ey-london-array-offshore-wind-park-in-north-sea-static.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 150px 0;
+  text-align: center;
+  position: relative;
+}
+.hero-section2 {
+  background: url('https://assets.ey.com/content/dam/ey-sites/ey-com/en_gl/topics/power-and-utilities/ey-photovoltaic-cells-and-the-chongqing-city-skyline-china-static.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 150px 0;
+  text-align: center;
+  position: relative;
+}
+
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 50px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background-color: #FFC72C;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+}
+
+.features-section {
+  padding: 80px 0;
+  background: url('/assets/images/ey-engineer-walking-on-a-wind-farm-at-sunset-static.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+}
+
+.features-section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  color: #000000;
+}
+
+.feature-box {
+  text-align: center;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.feature-icon {
+  font-size: 3.5rem;
+  color: #FFC72C;
+  margin-bottom: 20px;
+}
+
+.about-section {
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+width: 100%;
+}
+
+.testimonials-section, .cta-section {
+  padding: 80px 0;
+  text-align: center;
+  background: white
+
+  
+}
+
+.testimonials-section h2, .cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.testimonial {
+  background: #a5a5a5;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.cta-section {
+  background: url("/assets/images/ey-ai-young-businesswoman-with-laptop-walking-by-orange-wall-background.jpg") no-repeat center center;
+  background-size: cover;
+  color: rgb(255, 255, 255);
+}
+
+.cta-section .btn-primary {
+  font-size: 1.5rem;
+  padding: 15px 30px;
+}

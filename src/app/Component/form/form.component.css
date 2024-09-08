@@ -1,0 +1,220 @@
+.scrollable-content {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 15px;
+}
+
+.scrollable-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-fluid {
+  padding: 0;
+  height: 100vh;
+  margin-top: 30px;
+}
+
+.card {
+  border: none;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bg-gradient {
+  background: linear-gradient(135deg, #e3f2fd, #f3f3f3);
+}
+
+.bg-dark {
+  background-color: #343a40 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+.text-white h1, .text-white p {
+  color: #ffffff !important;
+}
+
+.img-fluid {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.progress {
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+}
+
+.progress-bar {
+  background-color: #ffe600;
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+.form-control {
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 1.1em;
+}
+
+.btn-primary {
+  background-color: #ffe600;
+  border-color: #ffe600;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.1em;
+}
+
+.btn-primary:hover {
+  background-color: #ffe600;
+  border-color: #ffe600;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+.list-group-item { 
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  padding: 25px;
+  font-size: 1.6em;
+}
+
+.list-group-item:hover {
+  background-color: #f1f1f1;
+  transform: scale(1.02);
+}
+
+h1, h5 {
+  font-family: Inter;
+  font-size: 1.25em;
+  font-weight: bold;
+  font-weight: 600;
+  color: #333;
+}
+
+h2{
+  font-family: Inter;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h5 {
+  font-size: 1.5em;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.selected-option {
+  background-color: #ffcc00;
+  color: #343a40;
+}
+
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.p-4 {
+  padding: 1.5rem !important;
+}
+
+.p-5 {
+  padding: 3rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Custom styles for the responded message */
+.text-danger {
+  font-size: 2em;
+  font-weight: 700;
+  color: #dc3545 !important;
+}
+
+.confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1400;
+  background: url('/assets/images/confetti-glitter.gif') center center no-repeat;
+  background-size: cover;
+}
